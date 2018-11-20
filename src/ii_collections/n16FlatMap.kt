@@ -9,10 +9,19 @@ fun example() {
 
 val Customer.orderedProducts: Set<Product> get() {
     // Return all products this customer has ordered
-    todoCollectionTask()
+    val result = mutableSetOf<Product>()
+    orders.flatMap { result.addAll(it.products); result }
+//    orders.forEach { result.addAll(it.products) } // same as using forEach
+    return result
 }
 
 val Shop.allOrderedProducts: Set<Product> get() {
     // Return all products that were ordered by at least one customer
-    todoCollectionTask()
+    val result = mutableSetOf<Product>()
+    customers.flatMap { result.addAll(it.orderedProducts); result }
+//    customers.forEach { result.addAll(it.orderedProducts) }
+    return result
+}
+
+fun main(args: Array<String>) {
 }
