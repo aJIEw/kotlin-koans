@@ -13,9 +13,15 @@ fun todoTask36(): Nothing = TODO(
     documentation = doc36()
 )
 
+/**
+ * 扩展函数
+ * */
 fun task36(): List<Boolean> {
-    val isEven: Int.() -> Boolean = { todoTask36() }
-    val isOdd: Int.() -> Boolean = { todoTask36() }
+    /**
+     * 表示变量类型为 Int 的扩展函数，返回值为 Boolean
+     * */
+    val isEven: Int.() -> Boolean = { this % 2 == 0 }
+    val isOdd: Int.() -> Boolean = { this % 2 != 0 }
 
     return listOf(42.isOdd(), 239.isOdd(), 294823098.isEven())
 }
