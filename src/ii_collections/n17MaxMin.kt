@@ -12,18 +12,5 @@ fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? {
 
 fun Customer.getMostExpensiveOrderedProduct(): Product? {
     // Return the most expensive product which has been ordered
-    var mep: Product? = orders[0].products.maxBy { it.price }
-    for (order in orders) {
-        val temp = order.products.maxBy { it.price }
-        if (mep == null) {
-            mep = temp
-            continue
-        }
-
-        if (mep.price < temp?.price!!) {
-            mep = temp
-        }
-    }
-
-    return mep
+    return orders.flatMap { it.products }.maxBy { it.price }
 }

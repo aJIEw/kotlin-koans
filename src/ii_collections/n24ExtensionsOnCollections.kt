@@ -3,7 +3,7 @@ package ii_collections
 import util.TODO
 
 fun todoTask24(): Nothing = TODO(
-    """
+        """
         Task 24.
         The function should do the same as '_24_JavaCode.doSomethingStrangeWithCollection'.
         Replace all invocations of 'todoTask24()' with the appropriate code.
@@ -15,8 +15,6 @@ fun todoTask24(): Nothing = TODO(
  * Kotlin 两行代码就能搞定
  * */
 fun doSomethingStrangeWithCollection(collection: Collection<String>): Collection<String>? {
-    val groupsByLength = collection.groupBy { s -> s.length }
-
-    return groupsByLength.values.maxBy { group -> group.size }
+    return collection.groupBy { s -> s.length }.values.maxBy { group -> group.size }
 }
 

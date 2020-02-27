@@ -12,6 +12,21 @@ class LazyProperty(val initializer: () -> Int) {
         }
     val lazy: Int
         get() = lazyValue!!
+
+    init {
+        println("before")
+    }
+
+    val i by lazy {
+        println("initialized")
+        2
+    }
+
+    val s by lazy(initializer)
+}
+
+fun main() {
+    println(LazyProperty { 4 }.lazy)
 }
 
 fun todoTask33(): Nothing = TODO(

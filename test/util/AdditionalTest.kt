@@ -6,12 +6,12 @@ import i_introduction._4_Lambdas.N04LambdasKtTest
 import i_introduction._7_Nullable_Types.N07NullableTypesKtTest
 import i_introduction._8_Smart_Casts.N08SmartCastsKtTest
 import ii_collections.N24ExtensionsOnCollectionsKtTest
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 class AdditionalTest {
-    @Test fun test() {
+    @Test
+    fun test() {
         invokeTests(
                 { N01JavaToKotlinConverterKtTest().collection() },
                 { N03DefaultArgumentsKtTest().testDefaultAndNamedParams() },
@@ -20,15 +20,15 @@ class AdditionalTest {
                 { N08SmartCastsKtTest().testNum() },
                 { N24ExtensionsOnCollectionsKtTest().testCollectionOfOneElement() }
         )
-        assertTrue("${JavaCode.set}", JavaCode.set.isEmpty())
+        assertTrue(JavaCode.set.isEmpty(), "${JavaCode.set}")
     }
 
     private fun invokeTests(vararg tests: () -> Unit) {
         for (test in tests) {
             try {
                 test()
+            } catch (e: NotImplementedException) {
             }
-            catch (e: NotImplementedException) {}
         }
     }
 }

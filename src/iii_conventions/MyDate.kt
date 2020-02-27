@@ -1,6 +1,10 @@
 package iii_conventions
 
 /**
+ * MyDate 类，演示了 Kotlin 中的操作符重载，不但可以重载 >< 等，还可以重载 + - .. 等操作符
+ * */
+
+/**
  * 实现 Comparable 就可以使用 >=< 来比较大小了
  * */
 data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : Comparable<MyDate> {
@@ -45,7 +49,7 @@ class RepeatedTimeInterval(val ti: TimeInterval, val times: Int)
 /**
  * 实现 times 就可以调用 * 操作符了
  * */
-operator fun TimeInterval.times(times: Int) : RepeatedTimeInterval {
+operator fun TimeInterval.times(times: Int): RepeatedTimeInterval {
     return RepeatedTimeInterval(this, times)
 }
 

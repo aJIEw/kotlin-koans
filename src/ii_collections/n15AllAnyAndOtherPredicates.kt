@@ -5,12 +5,20 @@ fun example2(list: List<Int>) {
     val isZero: (Int) -> Boolean = { it == 0 }
 
     val hasZero: Boolean = list.any(isZero)
+    println("hasZero? $hasZero")
 
     val allZeros: Boolean = list.all(isZero)
+    println("allZeros? $allZeros")
 
     val numberOfZeros: Int = list.count(isZero)
+    println("numberOfZeros? $numberOfZeros")
 
     val firstPositiveNumber: Int? = list.firstOrNull { it > 0 }
+    println("firstPositiveNumber? $firstPositiveNumber")
+}
+
+fun main() {
+    example2(listOf(0, 1, 2, 3, 4))
 }
 
 fun Customer.isFrom(city: City): Boolean {

@@ -19,7 +19,9 @@ fun todoTask12(): Nothing = TODO(
 )
 
 fun List<Int>.sortedDescending(): List<Int> {
-    Collections.sort(this, { o1: kotlin.Int?, o2: kotlin.Int? -> o1?.compareTo(o2?.absoluteValue ?: 0)?.unaryMinus() ?: 0 })
+    Collections.sort(this) { o1, o2 ->
+        o2 - o1
+    }
     return this
 }
 

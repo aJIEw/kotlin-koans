@@ -4,13 +4,16 @@ import util.TODO
 import util.doc30
 
 fun todoTask30(): Nothing = TODO(
-    """
+        """
         Task 30.
         Read about destructuring declarations and make the following code compile by adding one 'data' modifier.
     """,
-    documentation = doc30()
+        documentation = doc30()
 )
 
+/**
+ * Kotlin 支持对象的结构赋值，只要实现对应的 componentX 方法
+ * */
 class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) {
     operator fun component1(): Int {
         return year

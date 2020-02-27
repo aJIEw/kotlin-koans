@@ -7,21 +7,18 @@ fun example() {
     result == listOf('a', 'b', 'c', '1', '2')
 }
 
-val Customer.orderedProducts: Set<Product> get() {
-    // Return all products this customer has ordered
-    val result = mutableSetOf<Product>()
-    orders.flatMap { result.addAll(it.products); result }
-//    orders.forEach { result.addAll(it.products) } // same as using forEach
-    return result
+fun main() {
+    example()
 }
 
-val Shop.allOrderedProducts: Set<Product> get() {
-    // Return all products that were ordered by at least one customer
-    val result = mutableSetOf<Product>()
-    customers.flatMap { result.addAll(it.orderedProducts); result }
-//    customers.forEach { result.addAll(it.orderedProducts) }
-    return result
-}
+val Customer.orderedProducts: Set<Product>
+    get() {
+        // Return all products this customer has ordered
+        return orders.flatMap { it.products }.toSet()
+    }
 
-fun main(args: Array<String>) {
-}
+val Shop.allOrderedProducts: Set<Product>
+    get() {
+        // Return all products that were ordered by at least one customer
+        return customers.flatMap { it.orderedProducts }.toSet()
+    }

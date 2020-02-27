@@ -3,8 +3,23 @@ package i_introduction._0_Hello_World
 import util.TODO
 import util.doc0
 
+/*
+
+Note that this project is obsolete.
+For the last version of Koans, check either
+online version
+  - https://play.kotlinlang.org/koans/overview
+or
+the course in the EduTools plugin
+ - https://www.jetbrains.com/help/education/learner-start-guide.html?section=Kotlin%20Koans
+ - https://www.jetbrains.com/help/education/install-edutools-plugin.html?section=IntelliJ%20IDEA
+
+The task content can be found at https://github.com/Kotlin/kotlin-koans-edu.
+
+ */
+
 fun todoTask0(): Nothing = TODO(
-    """
+        """
         Task 0.
 
         Read README.md to learn how to work with this project and check your solutions.
@@ -20,8 +35,8 @@ fun todoTask0(): Nothing = TODO(
 
         Let's start! Make the function 'task0' return "OK". Note that you can return expression directly.
     """,
-    documentation = doc0(),
-    references = { task0(); "OK" }
+        documentation = doc0(),
+        references = { task0(); "OK" }
 )
 
 fun task0(): String {

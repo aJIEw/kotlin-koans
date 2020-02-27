@@ -4,13 +4,13 @@ import util.TODO
 import util.doc36
 
 fun todoTask36(): Nothing = TODO(
-    """
+        """
         Task 36.
         Read about extension function literals.
         You can declare `isEven` and `isOdd` as values, that can be called as extension functions.
         Complete the declarations below.
     """,
-    documentation = doc36()
+        documentation = doc36()
 )
 
 /**

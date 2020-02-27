@@ -2,7 +2,6 @@ package vi_generics
 
 import util.TODO
 import java.util.*
-import java.util.function.Predicate
 
 fun task41(): Nothing = TODO(
         """
@@ -27,13 +26,13 @@ fun List<String>.partitionWordsAndLines(): Pair<List<String>, List<String>> {
 
 fun Set<Char>.partitionLettersAndOtherSymbols(): Pair<Set<Char>, Set<Char>> {
 //    task41()
-    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
+    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z' }
 }
 
 /**
  * Copied from Resolutions branch
  * */
-fun <T, C: MutableCollection<T>> Collection<T>.partitionTo(first: C, second: C, predicate: (T) -> Boolean): Pair<C, C> {
+fun <T, C : MutableCollection<T>> Collection<T>.partitionTo(first: C, second: C, predicate: (T) -> Boolean): Pair<C, C> {
     for (element in this) {
         if (predicate(element)) {
             first.add(element)
